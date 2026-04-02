@@ -11,15 +11,14 @@
     <nav class="nav">
       <div class="nav__inner">
         <a href="#" class="nav__logo">Veronica's Portfolio</a>
-        <ul class="nav__links">
-          <li><a href="#projects">Work</a></li>
-        </ul>
       </div>
     </nav>
 
     <!-- Hero -->
     <header class="hero">
+      <div class="hero__bg-glow"></div>
       <div class="hero__content">
+        <span class="hero__label">DESIGN ARCHIVE</span>
         <h1 class="hero__title">Veronica's Portfolio</h1>
         <p class="hero__subtitle">
           A collection of all my design work.
@@ -40,26 +39,28 @@
           />
         </div>
         <div class="project-card__body">
-          <h2 class="project-card__title">Defuse or Lose (March 2026)</h2>
+          <div class="project-card__header">
+            <h2 class="project-card__title">Defuse or Lose</h2>
+            <span class="project-card__date">MARCH 2026</span>
+          </div>
+          <span class="project-card__tag">Game Design</span>
           <p class="project-card__desc">
             A cross-platform multiplayer bomb-defusal game developed with React Native. Includes player-specific rules, responsive UI designed in Figma, and mechanics promoting teamwork.
           </p>
-          <div class="project-card__links" style="margin-top: 1rem; display: flex; gap: 1rem;">
+          <div class="project-card__links">
             <a
               href="https://www.figma.com/design/qvHLLhDvN36bMeNwBqfebj/defuse-or-lose--cmd-f-2026-?node-id=2033-353&t=8MpgTzNrDRZQUqcA-1"
               class="btn btn--outline"
               target="_blank"
               rel="noopener noreferrer"
-              style="text-decoration: none;"
-              >Figma</a
+              >Figma ↗</a
             >
             <a
               href="https://github.com/DaxtonL/cmd-f"
-              class="btn btn--outline"
+              class="btn btn--filled"
               target="_blank"
               rel="noopener noreferrer"
-              style="text-decoration: none;"
-              >GitHub</a
+              >GitHub ↗</a
             >
           </div>
         </div>
@@ -76,26 +77,28 @@
           />
         </div>
         <div class="project-card__body">
-          <h2 class="project-card__title">ToneLens (Nov 2025)</h2>
+          <div class="project-card__header">
+            <h2 class="project-card__title">ToneLens</h2>
+            <span class="project-card__date">NOV 2025</span>
+          </div>
+          <span class="project-card__tag">AI Tool</span>
           <p class="project-card__desc">
             An AI-powered application designed to analyze nuanced emotional tones in digital conversations. Features intuitive real-time tone detection interfaces.
           </p>
-          <div class="project-card__links" style="margin-top: 1rem; display: flex; gap: 1rem;">
+          <div class="project-card__links">
             <a
               href="https://www.figma.com/design/2XTwCqtNbqKAeIG9LJ1vi3/tonelens--hackcamp-2025-?node-id=0-1&t=8MpgTzNrDRZQUqcA-1"
               class="btn btn--outline"
               target="_blank"
               rel="noopener noreferrer"
-              style="text-decoration: none;"
-              >Figma</a
+              >Figma ↗</a
             >
             <a
               href="https://github.com/veronicahzh/ToneLens"
-              class="btn btn--outline"
+              class="btn btn--filled"
               target="_blank"
               rel="noopener noreferrer"
-              style="text-decoration: none;"
-              >GitHub</a
+              >GitHub ↗</a
             >
           </div>
         </div>
@@ -105,7 +108,9 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <p>© 2026 Veronica Zhang Harvey · Built with ♥</p>
+        <div class="footer__inner">
+          <p>© 2026 Veronica Zhang Harvey</p>
+        </div>
       </div>
     </footer>
 
