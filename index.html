@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav__inner">
+        <a href="#" class="nav__logo">Veronica's UI Portfolio</a>
+        <ul class="nav__links">
+          <li><a href="#projects">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">UI Design Showcase</h1>
+        <p class="hero__subtitle">
+          A curated collection of interface designs, prototypes, and visual
+          experiments.
+        </p>
+        <a href="#projects" class="btn btn--primary">View My Work</a>
+      </div>
+    </header>
+
+    <!-- Filter Bar -->
+    <section class="filter-bar" id="projects">
+      <div class="container">
+        <div class="filter-bar__inner">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="branding">Branding</button>
+          <button class="filter-btn" data-filter="design-system">Design System</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <main class="projects container">
+      <!-- Project Card 1 -->
+      <article class="project-card" data-category="mobile">
+        <div class="project-card__media">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzZDNjNGRiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj5Nb2JpbGUgQXBwIFVJPC90ZXh0Pjwvc3ZnPg=="
+            alt="Mobile App UI screenshot"
+            class="project-card__img"
+            loading="lazy"
+          />
+          <div class="project-card__overlay">
+            <button
+              class="overlay-btn"
+              data-img="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzZDNjNGRiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj5Nb2JpbGUgQXBwIFVJPC90ZXh0Pjwvc3ZnPg=="
+              data-alt="Mobile App UI screenshot"
+              aria-label="Enlarge image"
+            >
+              🔍 Enlarge
+            </button>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">Mobile</span>
+          <h2 class="project-card__title">Fitness Tracker App</h2>
+          <p class="project-card__desc">
+            A clean, minimal mobile app design focused on daily fitness goal
+            tracking. Prioritised bottom-navigation, large tap targets, and
+            motivational micro-copy to keep users engaged throughout their
+            workout journey.
+          </p>
+          <div class="project-card__links">
+            <a
+              href="#"
+              class="btn btn--outline"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View Prototype ↗</a
+            >
+            <a
+              href="#"
+              class="btn btn--ghost"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Case Study</a
+            >
+          </div>
+        </div>
+      </article>
+
+      <!-- Project Card 2 -->
+      <article class="project-card" data-category="web">
+        <div class="project-card__media">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI0ZGNjU4NCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj5FLUNvbW1lcmNlIFdlYiBVSTwvdGV4dD48L3N2Zz4="
+            alt="E-Commerce Web UI screenshot"
+            class="project-card__img"
+            loading="lazy"
+          />
+          <div class="project-card__overlay">
+            <button
+              class="overlay-btn"
+              data-img="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI0ZGNjU4NCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj5FLUNvbW1lcmNlIFdlYiBVSTwvdGV4dD48L3N2Zz4="
+              data-alt="E-Commerce Web UI screenshot"
+              aria-label="Enlarge image"
+            >
+              🔍 Enlarge
+            </button>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">Web</span>
+          <h2 class="project-card__title">E-Commerce Redesign</h2>
+          <p class="project-card__desc">
+            Full redesign of an online fashion store with an emphasis on
+            immersive product photography, streamlined checkout flow, and a
+            refined typographic system. Conversion rates improved by 18% in
+            usability testing.
+          </p>
+          <div class="project-card__links">
+            <a
+              href="#"
+              class="btn btn--outline"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Live Demo ↗</a
+            >
+            <a
+              href="#"
+              class="btn btn--ghost"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Figma File</a
+            >
+          </div>
+        </div>
+      </article>
+
+      <!-- Project Card 3 -->
+      <article class="project-card" data-category="branding">
+        <div class="project-card__media">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzQzQjk3RiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj5CcmFuZCBJZGVudGl0eTwvdGV4dD48L3N2Zz4="
+            alt="Brand Identity screenshot"
+            class="project-card__img"
+            loading="lazy"
+          />
+          <div class="project-card__overlay">
+            <button
+              class="overlay-btn"
+              data-img="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzQzQjk3RiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj5CcmFuZCBJZGVudGl0eTwvdGV4dD48L3N2Zz4="
+              data-alt="Brand Identity screenshot"
+              aria-label="Enlarge image"
+            >
+              🔍 Enlarge
+            </button>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">Branding</span>
+          <h2 class="project-card__title">Café Brand Identity</h2>
+          <p class="project-card__desc">
+            End-to-end brand identity for an artisan coffee shop — logo,
+            colour palette, typography, packaging, and a marketing website.
+            The warm earthy tones and hand-lettered logo communicate a cosy,
+            community-first atmosphere.
+          </p>
+          <div class="project-card__links">
+            <a
+              href="#"
+              class="btn btn--outline"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View on Behance ↗</a
+            >
+          </div>
+        </div>
+      </article>
+
+      <!-- Project Card 4 -->
+      <article class="project-card" data-category="web">
+        <div class="project-card__media">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI0Y0QTI2MSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj5EYXNoYm9hcmQgVUk8L3RleHQ+PC9zdmc+"
+            alt="Dashboard UI screenshot"
+            class="project-card__img"
+            loading="lazy"
+          />
+          <div class="project-card__overlay">
+            <button
+              class="overlay-btn"
+              data-img="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI0Y0QTI2MSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj5EYXNoYm9hcmQgVUk8L3RleHQ+PC9zdmc+"
+              data-alt="Dashboard UI screenshot"
+              aria-label="Enlarge image"
+            >
+              🔍 Enlarge
+            </button>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">Web</span>
+          <h2 class="project-card__title">Analytics Dashboard</h2>
+          <p class="project-card__desc">
+            A data-dense analytics dashboard designed for clarity. Charts,
+            KPI widgets, and filters are arranged in a predictable grid that
+            scales gracefully from 1080p down to 768 px wide tablets.
+          </p>
+          <div class="project-card__links">
+            <a
+              href="#"
+              class="btn btn--outline"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Interactive Prototype ↗</a
+            >
+          </div>
+        </div>
+      </article>
+
+      <!-- Project Card 5 -->
+      <article class="project-card" data-category="mobile">
+        <div class="project-card__media">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzI2NDY1MyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj5PbmJvYXJkaW5nIEZsb3c8L3RleHQ+PC9zdmc+"
+            alt="Onboarding flow screenshot"
+            class="project-card__img"
+            loading="lazy"
+          />
+          <div class="project-card__overlay">
+            <button
+              class="overlay-btn"
+              data-img="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzI2NDY1MyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj5PbmJvYXJkaW5nIEZsb3c8L3RleHQ+PC9zdmc+"
+              data-alt="Onboarding flow screenshot"
+              aria-label="Enlarge image"
+            >
+              🔍 Enlarge
+            </button>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">Mobile</span>
+          <h2 class="project-card__title">App Onboarding Flow</h2>
+          <p class="project-card__desc">
+            A four-screen onboarding sequence that highlights key features
+            through progressive disclosure. Uses illustration, concise copy,
+            and a persistent skip option to respect the user's time while
+            still communicating value.
+          </p>
+          <div class="project-card__links">
+            <a
+              href="#"
+              class="btn btn--outline"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View Prototype ↗</a
+            >
+          </div>
+        </div>
+      </article>
+
+      <!-- Project Card 6 -->
+      <article class="project-card" data-category="design-system">
+            alt="Design System screenshot"
+            class="project-card__img"
+            loading="lazy"
+          />
+          <div class="project-card__overlay">
+            <button
+              class="overlay-btn"
+              data-img="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI0U3NkY1MSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj5EZXNpZ24gU3lzdGVtPC90ZXh0Pjwvc3ZnPg=="
+              data-alt="Design System screenshot"
+              aria-label="Enlarge image"
+            >
+              🔍 Enlarge
+            </button>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">Design System</span>
+          <h2 class="project-card__title">Component Library</h2>
+          <p class="project-card__desc">
+            A production-ready design system built in Figma, complete with
+            tokens, auto-layout components, and documentation. Covers
+            buttons, forms, modals, navigation patterns, and dark/light
+            mode variants.
+          </p>
+          <div class="project-card__links">
+            <a
+              href="#"
+              class="btn btn--outline"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Figma Library ↗</a
+            >
+            <a
+              href="#"
+              class="btn btn--ghost"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Docs</a
+            >
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="container about__inner">
+        <div class="about__text">
+          <h2 class="section-title">About This Portfolio</h2>
+          <p>
+            This site is a living showcase of my UI design practice. Every
+            project displayed here includes a description of the design
+            challenge, the decisions made, and links to prototypes or live
+            products where available.
+          </p>
+          <p>
+            I focus on simplicity, accessibility, and the small details that
+            make digital products feel polished and intuitive.
+          </p>
+        </div>
+        <div class="about__skills">
+          <h3>Tools &amp; Skills</h3>
+          <ul class="skill-list">
+            <li>Figma &amp; FigJam</li>
+            <li>Prototyping &amp; Wireframing</li>
+            <li>Design Systems</li>
+            <li>User Research &amp; Testing</li>
+            <li>HTML / CSS / JS</li>
+            <li>Motion &amp; Micro-interactions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="container contact__inner">
+        <h2 class="section-title">Get in Touch</h2>
+        <p>Have a project in mind or want to collaborate? Reach out!</p>
+        <a href="mailto:hello@example.com" class="btn btn--primary"
+          >Say Hello ✉️</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>© 2024 Veronica · Built with ♥</p>
+      </div>
+    </footer>
+
+    <!-- Lightbox modal -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox" hidden>
+      <button class="lightbox__close" id="lightboxClose" aria-label="Close lightbox">✕</button>
+      <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
