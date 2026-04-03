@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+      <div class="preloader__graphic">
+        <div class="spinner-halo"></div>
+        <svg class="constellation-lines" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <line class="c-line c-line-1" x1="20" y1="30" x2="70" y2="25" />
+          <line class="c-line c-line-2" x1="70" y1="25" x2="85" y2="65" />
+          <line class="c-line c-line-3" x1="85" y1="65" x2="50" y2="50" />
+          <line class="c-line c-line-4" x1="50" y1="50" x2="35" y2="80" />
+          <line class="c-line c-line-5" x1="35" y1="80" x2="20" y2="30" />
+          <line class="c-line c-line-6" x1="50" y1="50" x2="20" y2="30" />
+        </svg>
+        <div class="c-node c-node-1"></div>
+        <div class="c-node c-node-2"></div>
+        <div class="c-node c-node-3"></div>
+        <div class="c-node c-node-4"></div>
+        <div class="c-node c-node-5"></div>
+      </div>
+      <div class="preloader__text-wrapper">
+        <div class="preloader__text">
+          <span id="load-status">initializing archive...</span><span class="cursor"></span>
+        </div>
+        <div class="preloader__line"></div>
+      </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="nav">
       <div class="nav__inner">

@@ -11,6 +11,21 @@
   "use strict";
 
   /* ------------------------------------------------------------------
+     0. Preloader
+  ------------------------------------------------------------------ */
+  window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    
+    if (preloader) {
+      // Phase: Fade out
+      setTimeout(() => {
+        preloader.classList.add("preloader--hidden");
+        document.body.classList.add("loaded"); // Trigger content reveal animations
+      }, 3000); 
+    }
+  });
+
+  /* ------------------------------------------------------------------
      1. Category Filter
   ------------------------------------------------------------------ */
   const filterBar = document.querySelector(".filter-bar__inner");
