@@ -43,6 +43,29 @@
     <!-- Hero -->
     <header class="hero">
       <div class="hero__bg-glow"></div>
+      <svg class="zone hero-zone" viewBox="0 0 400 400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+        <!-- Constellation Fragment -->
+        <g filter="url(#soft-glow)">
+          <line x1="250" y1="100" x2="320" y2="140" class="c-line" stroke-opacity="0.8" />
+          <line x1="320" y1="140" x2="280" y2="220" class="c-line" stroke-opacity="0.4" />
+          <line x1="320" y1="140" x2="360" y2="280" class="c-line" stroke-opacity="0.6" />
+          
+          <circle cx="250" cy="100" r="1.5" class="c-node pulse-1" />
+          <circle cx="320" cy="140" r="2.5" class="c-node pulse-glow" />
+          <circle cx="280" cy="220" r="1.5" class="c-node c-node--blue pulse-2" />
+          <circle cx="360" cy="280" r="1" class="c-node pulse-3" />
+        </g>
+        
+        <!-- A couple scattered faint nodes -->
+        <circle cx="180" cy="60" r="1" class="c-node" opacity="0.3" />
+        <circle cx="380" cy="150" r="1" class="c-node c-node--blue" opacity="0.4" />
+      </svg>
       <div class="hero__content">
         <span class="hero__label">DESIGN ARCHIVE</span>
         <h1 class="hero__title">Veronica's Portfolio</h1>
@@ -52,8 +75,29 @@
       </div>
     </header>
 
-    <!-- Projects Grid -->
-    <main class="projects container" id="projects">
+    <!-- Projects Section -->
+    <div class="projects-section">
+      <svg class="zone project-zone" viewBox="0 0 500 500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <!-- Constellation Fragment -->
+        <g filter="url(#soft-glow)">
+          <line x1="100" y1="150" x2="160" y2="220" class="c-line" stroke-opacity="0.5" />
+          <line x1="160" y1="220" x2="80" y2="300" class="c-line" stroke-opacity="0.3" />
+          <line x1="160" y1="220" x2="220" y2="320" class="c-line" stroke-opacity="0.7" />
+          <line x1="220" y1="320" x2="140" y2="380" class="c-line" stroke-opacity="0.4" />
+
+          <circle cx="100" cy="150" r="1.5" class="c-node pulse-2" />
+          <circle cx="160" cy="220" r="2" class="c-node c-node--blue pulse-glow" />
+          <circle cx="80" cy="300" r="1" class="c-node pulse-3" />
+          <circle cx="220" cy="320" r="2.5" class="c-node pulse-1" />
+          <circle cx="140" cy="380" r="1.5" class="c-node c-node--blue pulse-2" />
+        </g>
+        
+        <circle cx="60" cy="200" r="1" class="c-node" opacity="0.2" />
+        <circle cx="260" cy="250" r="1.2" class="c-node" opacity="0.3" />
+      </svg>
+
+      <!-- Projects Grid -->
+      <main class="projects container" id="projects">
       <!-- Project Card 1: Defuse or Lose -->
       <article class="project-card">
         <div class="project-card__media">
@@ -129,10 +173,24 @@
           </div>
         </div>
       </article>
-    </main>
+      </main>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
+      <svg class="zone footer-zone" viewBox="0 0 400 200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#soft-glow)">
+          <line x1="150" y1="50" x2="220" y2="90" class="c-line" stroke-opacity="0.8" />
+          <line x1="220" y1="90" x2="280" y2="40" class="c-line" stroke-opacity="0.3" />
+          <line x1="220" y1="90" x2="260" y2="120" class="c-line" stroke-opacity="0.5" />
+          
+          <circle cx="150" cy="50" r="1.5" class="c-node pulse-1" />
+          <circle cx="220" cy="90" r="2" class="c-node pulse-glow" />
+          <circle cx="280" cy="40" r="1" class="c-node c-node--blue pulse-3" />
+          <circle cx="260" cy="120" r="1.5" class="c-node pulse-2" />
+        </g>
+        <circle cx="100" cy="90" r="0.8" class="c-node" opacity="0.4" />
+      </svg>
       <div class="container">
         <div class="footer__inner">
           <p>© 2026 Veronica Zhang Harvey</p>

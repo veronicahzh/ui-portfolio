@@ -217,17 +217,26 @@ body.loaded .projects {
 }
 
 .c-line {
-  stroke: rgba(255, 182, 193, 0.3);
-  stroke-width: 0.5;
-  animation: 3s ease-in-out infinite alternate flicker-line;
+  stroke: rgba(255, 182, 193, 0.4); /* Faint pink lines */
+  stroke-width: 0.6px;
 }
 
-.c-line-1 { animation-delay: 0s; }
-.c-line-2 { animation-delay: 0.7s; }
-.c-line-3 { animation-delay: 1.2s; }
-.c-line-4 { animation-delay: 1.8s; }
-.c-line-5 { animation-delay: 2.5s; }
-.c-line-6 { animation-delay: 0.5s; }
+.c-node {
+  fill: #FFB6C1; /* Accent primary */
+}
+
+.c-node--blue {
+  fill: #A7C7E7; /* Accent secondary */
+}
+
+.pulse-1 { animation: pulse-node 4s ease-in-out infinite alternate; }
+.pulse-2 { animation: pulse-node 3s ease-in-out infinite alternate; }
+.pulse-3 { animation: pulse-node 5s ease-in-out infinite alternate; }
+
+@keyframes pulse-node {
+  0% { opacity: 0.3; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1.1); filter: drop-shadow(0 0 4px rgba(255, 182, 193, 0.8)); }
+}
 
 @keyframes flicker-line {
   0%, 10% { stroke-opacity: 0.1; }
@@ -352,6 +361,47 @@ body.loaded .projects {
   color: var(--color-text);
 }
 
+/* Navigation Links */
+.nav__links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.5rem 0;
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-accent);
+  /* Removed harsh pink glow to keep navigation subtle */
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.05); 
+}
+
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-accent);
+  /* Softened the hover line glow significantly */
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.05); 
+}
+
 /* =============================================
    Hero
    ============================================= */
@@ -360,20 +410,159 @@ body.loaded .projects {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 4.5rem 0 3rem; /* Removed the inline padding so inner content dictates it */
+  padding: 5.5rem 0 2rem; /* Tightened bottom padding specifically (was 3rem) to bring cards closer */
   background: var(--color-bg);
   /* overflow: hidden; Removed to let glow bleed seamlessly if needed */
 }
 
 .hero__bg-glow {
-  position: fixed; /* Attach behind all content across whole viewport */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: radial-gradient(circle at 40% 30%, rgba(255, 182, 193, 0.06) 0%, rgba(167, 199, 231, 0.03) 30%, transparent 60%);
+  position: absolute; /* Keep it tight to the hero section now */
+  top: -10%;
+  left: -5%;
+  width: 80%;
+  height: 120%;
+  background: radial-gradient(ellipse at 40% 30%, rgba(255, 182, 193, 0.04) 0%, rgba(167, 199, 231, 0.02) 40%, transparent 65%);
   z-index: 0;
   pointer-events: none;
+}
+
+/* --- BACKGROUND & CONSTELLATION EFFECTS --- */
+.zone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15; /* Base dimming to keep it subtle */
+}
+
+.c-node {
+  fill: var(--color-accent);
+  opacity: 0.4; /* Soften nodes even more */
+}
+
+.c-node--blue {
+  fill: var(--color-accent-blue, #A7C7E7);
+}
+
+.c-line {
+  stroke: var(--color-accent);
+  stroke-width: 0.25px; /* Thinner, gossamer lines */
+  opacity: 0.3; /* Base line opacity */
+  fill: none;
+}
+
+/* Pulsing behaviors mapped via classes rather than keyframes per node */
+.pulse-1 { animation: pulse-node-soft 4s infinite ease-in-out; }
+.pulse-2 { animation: pulse-node-soft 6s infinite ease-in-out 1.5s; }
+.pulse-3 { animation: pulse-node-soft 5s infinite ease-in-out 3s; }
+.pulse-glow { animation: pulse-glow-hard 7s infinite ease-in-out; }
+
+@keyframes pulse-node-soft {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse-glow-hard {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+    /* Softened shadow strength from 3px/6px solid to highly diffused */
+    filter: drop-shadow(0 0 4px rgba(255, 182, 193, 0.2)); 
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(255, 182, 193, 0.3));
+  }
+}
+
+/* Place SVGs beneath important content explicitly */
+.container {
+  position: relative;
+  z-index: 10;
+}
+
+/* =============================================
+   Constellation Zones
+   ============================================= */
+.zone {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15; /* Substantially dimmed compared to previous 0.65 */
+  filter: blur(0.3px); /* Subtle soften to remove harsh vector edges */
+}
+
+/* Zone Placements to frame content without clashing */
+.hero-zone {
+  top: -5%; /* Mapped further up to blend as background */
+  right: -5%;
+  width: 600px;
+  height: 600px;
+}
+
+.projects-section {
+  position: relative; /* Anchor for the middle zone */
+}
+
+.project-zone {
+  top: 15%;
+  left: -150px; /* Offset to act as background bleed */
+  width: 700px;
+  height: 700px;
+}
+
+.footer-zone {
+  right: -5%;
+  bottom: -20%;
+  width: 500px;
+  height: 300px;
+}
+
+/* Constellation SVG Components */
+.c-line {
+  stroke: rgba(255, 182, 193, 0.4); /* Kept soft and transparent */
+  stroke-width: 0.3px; /* Ultra-thin gossamer weight */
+  stroke-linecap: round;
+}
+
+.c-node {
+  fill: #FFB6C1; /* Accent primary */
+  opacity: 0.4; /* Baseline dimness for loose scattered nodes */
+}
+
+.c-node--blue {
+  fill: #A7C7E7; /* Accent secondary */
+}
+
+.pulse-1 { animation: pulse-node-soft 6s ease-in-out infinite alternate; }
+.pulse-2 { animation: pulse-node-soft 8s ease-in-out infinite alternate; }
+.pulse-3 { animation: pulse-node-soft 10s ease-in-out infinite alternate; }
+
+.pulse-glow {
+  /* Unique brighter node to pull attention occasionally */
+  opacity: 0.6;
+  fill: #fff;
+  animation: pulse-glow-hard 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-node-soft {
+  0% { opacity: 0.1; transform: scale(1); }
+  100% { opacity: 0.6; transform: scale(1.1); }
+}
+
+@keyframes pulse-glow-hard {
+  0% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 0.9; transform: scale(1.3); filter: drop-shadow(0 0 5px rgba(255, 182, 193, 0.5)); }
 }
 
 .hero__content {
@@ -476,9 +665,9 @@ body.loaded .projects {
    ============================================= */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: 2.5rem;
-  padding-block: 2rem 5rem;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* slightly wider columns for better hierarchy / scale */
+  gap: 3rem; /* Loosened spacing between actual cards */
+  padding-block: 0rem 5rem; /* Pulled top padding to 0rem to pull closer to tightened hero */
   font-family: monospace;
 }
 
@@ -487,31 +676,27 @@ body.loaded .projects {
    ============================================= */
 .project-card {
   background: var(--color-surface);
-  border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  transition: all var(--transition);
   position: relative;
+  /* Removed harsh baseline shadow to rely mostly on border and a very subtle soft lift */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+  transition: transform 0.4s var(--easing), border-color 0.4s var(--easing), box-shadow 0.4s var(--easing);
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 182, 193, 0.3);
-  box-shadow: 0 8px 24px rgba(255, 182, 193, 0.15), 
-              0 0 12px rgba(255, 182, 193, 0.1);
-  z-index: 10;
+  /* Remove bright solid border, let the shadow glow softly instead */
+  border-color: rgba(255, 182, 193, 0.2);
+  /* Switch to a very soft, diffused pink aura instead of solid geometry */
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.3), 
+              0 0 15px rgba(255, 182, 193, 0.15); 
 }
 
-/* Hidden state for filter */
-.project-card[hidden] {
-  display: none;
-}
-
-/* Media */
-.project-card__media {
+.project-card__image-wrapper {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 10;
@@ -536,10 +721,10 @@ body.loaded .projects {
 
 /* Body */
 .project-card__body {
-  padding: 1.75rem 1.5rem;
+  padding: 2rem 1.75rem; /* Increased inner spacing to let content breathe */
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
   flex: 1;
   background: var(--color-surface);
 }
@@ -552,15 +737,16 @@ body.loaded .projects {
 }
 
 .project-card__title {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--color-text);
+  margin-bottom: 0.25rem; /* Separated title slightly from description */
 }
 
 .project-card__date {
   font-size: 0.7rem;
-  color: rgba(160, 160, 175, 0.4); /* Much more dimmed than standard var(--color-muted) */
+  color: rgba(160, 160, 175, 0.35); 
   letter-spacing: 0.05em;
   font-family: monospace; /* Adding monospace here to match tech look, optional but nice */
 }
@@ -576,22 +762,24 @@ body.loaded .projects {
   padding: 0.25rem 0.6rem;
   border-radius: var(--radius-sm);
   align-self: flex-start;
-  margin-top: -0.25rem;
+  margin-top: -0.5rem; /* Adjusted alignment from new spacings */
 }
 
 .project-card__desc {
-  font-size: 0.85rem;
+  font-size: 0.9rem; /* very slightly larger for legibility */
   color: var(--color-muted);
   line-height: 1.6;
   flex: 1;
-  max-width: 95%;
+  max-width: 98%;
 }
 
 .project-card__links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
+  gap: 1rem; /* Better separated buttons */
+  margin-top: 1rem;
+  padding-top: 1.25rem; /* Add border split line */
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 /* =============================================
@@ -653,11 +841,12 @@ body.loaded .projects {
    Footer
    ============================================= */
 .footer {
-  background: var(--color-bg);
-  border-top: 1px solid var(--color-border);
+  position: relative; /* Added relative context for the footer zone */
+  background: transparent; /* Changed from solid color to inherit the radial glow from body */
+  border-top: 1px solid rgba(255, 255, 255, 0.04); /* Faint, barely-there border line */
   color: var(--color-muted);
   text-align: center;
-  padding-block: 2rem;
+  padding-block: 4rem 3rem; /* Expanded top padding to distance from projects */
   font-size: 0.8rem;
   font-family: monospace;
 }
@@ -665,7 +854,7 @@ body.loaded .projects {
 .footer__inner {
   width: min(100%, var(--max-width));
   margin-inline: auto;
-  opacity: 0.7;
+  opacity: 0.5; /* Muted it further */
 }
 
 /* =============================================
