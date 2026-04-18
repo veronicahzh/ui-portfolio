@@ -1,3 +1,3 @@
-# ui-portfolio
-portfolio for all my ui work
-https://veronicahzh.github.io/ui-portfolio/
+# my-portfolio
+portfolio for all my work
+https://veronicahzh.github.io/veronica-zh
